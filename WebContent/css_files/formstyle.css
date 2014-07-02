@@ -1,0 +1,97 @@
+@CHARSET "ISO-8859-1";
+body
+{
+	text-align: left;
+}
+#fontstyle{
+	font-family: cursive;
+	font-size: 25px;
+	color:blue;
+}
+fieldset{
+	overflow: auto;
+}
+form div.dynamiclabel{ /* div container for each form field with pop up label */
+  display: block;
+  margin: 25px;
+  font: 16px;
+  position: relative;
+}
+
+
+form div.dynamiclabel input[type="email"],form div.dynamiclabel input[type="password"],form div.dynamiclabel input[type="reset"],form div.dynamiclabel input[type="tel"],form div.dynamiclabel input[type="text"],form div.dynamiclabel select, form div.dynamiclabel textarea{
+  width: 320px;
+  padding: 7px;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+}
+
+form div.dynamiclabel textarea{
+  height: 200px;
+}
+
+
+form div.dynamiclabel label{ /* pop up label style */
+  position: absolute;
+  left: 0;
+  background: #9FC;
+  border: 1px solid yellow;
+  border-radius: 2px;
+  padding: 3px 10px;
+  box-shadow: 4px 1px 5px gray;
+  font-weight: bold;
+  -webkit-backface-visibility: hidden;
+  top: 10px; /* initial top position of label relative to dynamiclabel container */
+  -moz-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all 0.4s ease-in-out; /* Safari doesn't seem to support cubic-bezier values beyond 0 to 1, so use keyword value instead */
+  -o-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+  z-index: -1;
+}
+
+
+form div.dynamiclabel > *:focus{ /* when user focuses on child element inside div.dynamiclabel */
+  border: 1px solid #45bcd2;
+  box-shadow: 0 0 8px 2px #98d865;
+}
+
+
+form div.dynamiclabel > *:focus + label{ /* label style when user focuses on child element inside div.dynamiclabel */
+  opacity: 1;
+  z-index:100;
+  top: -35px; /* Post top position of label on focus relative to dynamiclabel container */
+  -ms-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+fieldset{
+	padding:0;
+	margin:0;
+	border:0;
+}
+.button {
+background: #FF9900;
+border: 1px solid #FF9900;
+padding: 5px 10px 5px 10px;
+font-size: 14px;
+font-weight: bold;
+margin: 0;
+cursor: pointer;
+color: black;
+font-family: Arial,Helvetica,sans-serif;
+}
+span{
+    float: left;
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #06F;
+    font-size: 15px;
+}
+#one{
+height: 30px;
+width:200px;
+}
